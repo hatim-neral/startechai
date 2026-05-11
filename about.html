@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Star Tech AI Constructions | About Us</title>
+  <meta name="description" content="Learn more about Star Tech AI Constructions, our experience, values, team, and approach to construction and remodeling." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #d6a354;
+      --accent-dark: #b88433;
+      --text-dark: #1f2937;
+      --text-muted: #6b7280;
+      --bg: #f5f3ef;
+      --white: #ffffff;
+      --border: rgba(0, 0, 0, 0.08);
+      --shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      --dark: #171717;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .custom-navbar {
+      background: rgba(23, 23, 23, 0.92);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar-brand {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.9rem;
+      letter-spacing: 0.4px;
+      color: #fff !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: rgba(255,255,255,0.85) !important;
+      font-weight: 500;
+      margin-left: 10px;
+      padding: 10px 14px !important;
+      border-radius: 10px;
+      transition: all 0.25s ease;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      background: rgba(214,163,84,0.14);
+      color: var(--accent) !important;
+    }
+
+    .navbar-toggler {
+      border: none;
+      box-shadow: none !important;
+    }
+
+    .navbar-toggler-icon {
+      filter: brightness(0) invert(1);
+    }
+
+    .page-hero {
+      padding: 120px 0 32px;
+    }
+
+    .page-hero-box {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2b2b2b 100%);
+      color: #fff;
+      border-radius: 28px;
+      padding: 56px 42px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(214,163,84,0.14);
+      color: #f1c98b;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .page-hero-box h1,
+    .section-heading h2,
+    .card-title-main,
+    .stat-number {
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .page-hero-box h1 {
+      font-size: clamp(2.4rem, 4vw, 4.4rem);
+      line-height: 1.02;
+      margin-bottom: 14px;
+    }
+
+    .page-hero-box p {
+      color: rgba(255,255,255,0.76);
+      font-size: 1.06rem;
+      line-height: 1.8;
+      max-width: 780px;
+      margin-bottom: 0;
+    }
+
+    .section-block {
+      padding: 28px 0 80px;
+    }
+
+    .section-heading {
+      margin-bottom: 28px;
+    }
+
+    .section-heading .small-title {
+      color: var(--accent-dark);
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 2.5vw, 3rem);
+      margin: 10px 0 8px;
+    }
+
+    .section-heading p {
+      color: var(--text-muted);
+      max-width: 700px;
+    }
+
+    .content-card,
+    .team-card,
+    .info-card,
+    .value-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .content-card,
+    .team-card,
+    .info-card,
+    .value-card {
+      padding: 28px;
+    }
+
+    .content-card p,
+    .team-card p,
+    .info-card p,
+    .value-card p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    .story-image {
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      height: 100%;
+      min-height: 420px;
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .stats-strip {
+      background: linear-gradient(135deg, #181818 0%, #2a2a2a 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 30px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      margin: 0;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .mini-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(214,163,84,0.12);
+      color: var(--accent-dark);
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+    }
+
+    .card-title-main {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .team-role {
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .cta-panel {
+      background: linear-gradient(135deg, #1d1d1d 0%, #2c2c2c 100%);
+      color: var(--white);
+      border-radius: 28px;
+      padding: 42px 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-panel h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2rem, 3vw, 3.2rem);
+      margin-bottom: 10px;
+    }
+
+    .cta-panel p {
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 0;
+    }
+
+    .btn-warning {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #111;
+      font-weight: 700;
+    }
+
+    .btn-warning:hover {
+      background-color: var(--accent-dark);
+      border-color: var(--accent-dark);
+      color: #111;
+    }
+
+    .footer {
+      padding: 24px 0 36px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 991.98px) {
+      .page-hero {
+        padding: 100px 0 24px;
+      }
+
+      .page-hero-box {
+        padding: 36px 24px;
+      }
+
+      .navbar-nav .nav-link {
+        margin-left: 0;
+        margin-bottom: 6px;
+      }
+
+      .story-image {
+        min-height: 320px;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .page-hero-box,
+      .content-card,
+      .team-card,
+      .info-card,
+      .value-card,
+      .cta-panel,
+      .stats-strip,
+      .story-image {
+        border-radius: 18px;
+      }
+
+      .page-hero-box h1 {
+        font-size: 2.4rem;
+      }
+
+      .cta-panel .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">StarTech AI Constructions</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="ongoing-projects.html">Ongoing Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="previous-projects.html">Previous Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-box">
+          <span class="eyebrow">About StarTech AI Constructions</span>
+          <h1>We build with structure, discipline, and long-term trust.</h1>
+          <p>
+            Our company focuses on construction, renovation, remodeling, and interior work with a practical approach to planning, execution, and client communication.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6">
+            <div class="story-image">
+              <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?q=80&w=1400&auto=format&fit=crop" alt="Construction team discussion" loading="lazy">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="content-card h-100 d-flex flex-column justify-content-center">
+              <div class="section-heading mb-3">
+                <div class="small-title">Who We Are</div>
+                <h2>A construction team shaped by quality and consistency</h2>
+              </div>
+              <p>
+                StarTech AI Constructions delivers complete residential and commercial construction solutions, covering structural execution, renovations, and interior finishing with a strong focus on quality, precision, and timely delivery. We combine practical construction expertise with modern design standards to create spaces that are durable, functional, and visually refined.
+              </p>
+              <p class="mt-3">
+                Our team works closely with clients through every stage of the project, ensuring transparency, clear communication, and attention to detail from planning to final execution. Whether it’s a new build, office setup, or interior transformation, we are committed to delivering reliable workmanship and professional project management that meets the highest standards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block pt-0">
+      <div class="container">
+        <div class="stats-strip">
+          <div class="row g-4 text-center text-md-start">
+            <div class="col-md-4">
+              <div class="stat-number">5+</div>
+              <p class="stat-label">Years of practical experience</p>
+            </div>
+            <div class="col-md-4">
+              <div class="stat-number">15+</div>
+              <p class="stat-label">Projects delivered and managed</p>
+            </div>
+            <div class="col-md-4">
+              <div class="stat-number">100%</div>
+              <p class="stat-label">Commitment to quality and communication</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block pt-0">
+      <div class="container">
+        <div class="section-heading">
+          <div class="small-title">What Matters To Us</div>
+          <h2>The values behind the work</h2>
+          <p>
+            We value quality workmanship, transparency, and reliable project delivery in every construction and interior project we undertake. Our focus is on building lasting spaces through precision, professionalism, and strong client relationships.
+
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-3">
+            <div class="value-card">
+              <div class="mini-icon">🧱</div>
+              <div class="card-title-main">Quality Work</div>
+              <p>We focus on strong execution, material quality, and clean finishing across every stage of the project.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="value-card">
+              <div class="mini-icon">📅</div>
+              <div class="card-title-main">Clear Timelines</div>
+              <p>Planning and scheduling are treated seriously so clients always understand the progress and next steps.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="value-card">
+              <div class="mini-icon">🤝</div>
+              <div class="card-title-main">Trust First</div>
+              <p>Transparent communication and realistic commitments help us build confidence before, during, and after execution.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="value-card">
+              <div class="mini-icon">📐</div>
+              <div class="card-title-main">Practical Design</div>
+              <p>We combine functionality and finish quality to deliver spaces that work well and look refined.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block pt-0">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="info-card h-100">
+              <div class="section-heading mb-3">
+                <div class="small-title">Our Mission</div>
+                <h2>Build spaces that last and relationships that stay strong</h2>
+              </div>
+              <p class="mt-3">
+                Our mission is to deliver construction and remodeling work that is well planned, honestly managed, and executed with consistent quality so clients feel confident at every stage of the project.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="info-card h-100">
+              <div class="section-heading mb-3">
+                <div class="small-title">Why Clients Trust Us</div>
+                <h2>Trust grows from transparency</h2>
+              </div>
+              <ul class="ps-3 mb-0 mt-3">
+                <li class="mb-2">Clear scope discussion before execution</li>
+                <li class="mb-2">Visible contact details and local presence</li>
+                <li class="mb-2">Real project experience across categories</li>
+                <li class="mb-2">Practical communication throughout the process</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block pt-0">
+      <div class="container">
+        <div class="cta-panel">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <h2>Want to discuss your next project?</h2>
+              <p>Contact our team to talk about construction, renovation, or remodeling work for your home or commercial property.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="contact.html" class="btn btn-warning btn-lg px-4">Contact Us Today</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="mb-0">© 2026 Star Tech AI Constructions. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

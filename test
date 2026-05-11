@@ -1,0 +1,77 @@
+<section class="section-block">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <div class="project-card">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" alt="Residential villa construction" loading="lazy">
+              <div class="card-body">
+                <span class="badge-soft">In Progress</span>
+                <h5>Residential Villa Construction</h5>
+                <p>Location: Mumbai</p>
+                <p>Status: Structural and slab work in progress.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <div class="project-card">
+              <img src="https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=1200&auto=format&fit=crop" alt="Office renovation project" loading="lazy">
+              <div class="card-body">
+                <span class="badge-soft">Interior Stage</span>
+                <h5>Office Renovation</h5>
+                <p>Location: Navi Mumbai</p>
+                <p>Status: Interior execution and finishing work ongoing.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <div class="project-card">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop" alt="Home remodeling project" loading="lazy">
+              <div class="card-body">
+                <span class="badge-soft">Design + Build</span>
+                <h5>Home Remodeling Project</h5>
+                <p>Location: Thane</p>
+                <p>Status: Layout modifications and execution planning phase.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <div class="project-card">
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="Commercial build site" loading="lazy">
+              <div class="card-body">
+                <span class="badge-soft">Commercial</span>
+                <h5>Commercial Build Site</h5>
+                <p>Location: Pune</p>
+                <p>Status: Site mobilization and early-stage structural coordination.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <div class="project-card">
+              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop" alt="Kitchen renovation work" loading="lazy">
+              <div class="card-body">
+                <span class="badge-soft">Residential</span>
+                <h5>Kitchen Renovation</h5>
+                <p>Location: Bandra</p>
+                <p>Status: Demolition complete, finishing and storage work underway.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <div class="project-card">
+              <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1200&auto=format&fit=crop" alt="Apartment fit-out" loading="lazy">
+              <div class="card-body">
+                <span class="badge-soft">Fit-Out</span>
+                <h5>Apartment Interior Fit-Out</h5>
+                <p>Location: Powai</p>
+                <p>Status: Ceiling, lighting, and joinery work in progress.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

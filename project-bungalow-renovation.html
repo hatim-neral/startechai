@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildCraft | Bungalow Renovation Progress</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #d6a354;
+      --accent-dark: #b88433;
+      --text-dark: #1f2937;
+      --text-muted: #6b7280;
+      --bg: #f5f3ef;
+      --white: #ffffff;
+      --border: rgba(0, 0, 0, 0.08);
+      --shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding-top: 96px;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .custom-navbar {
+      background: linear-gradient(90deg, #232323 0%, #2b2b2b 100%);
+      border-bottom: 3px solid rgba(255,255,255,0.88);
+      padding: 14px 0;
+    }
+
+    .navbar-brand {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.2rem;
+      line-height: 1;
+      color: #fff !important;
+      letter-spacing: 0.2px;
+    }
+
+    .navbar-nav {
+      gap: 12px;
+    }
+
+    .navbar-nav .nav-link {
+      color: rgba(255,255,255,0.94) !important;
+      font-size: 0.98rem;
+      font-weight: 700;
+      padding: 12px 18px !important;
+      border-radius: 14px;
+      transition: all 0.25s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      background: rgba(214,163,84,0.10);
+      color: #fff !important;
+    }
+
+    .navbar-nav .nav-link.active {
+      background: rgba(214,163,84,0.16);
+      color: var(--accent) !important;
+    }
+
+    .navbar-toggler {
+      border: none;
+      box-shadow: none !important;
+    }
+
+    .navbar-toggler-icon {
+      filter: brightness(0) invert(1);
+    }
+
+    .page-hero {
+      padding: 24px 0 24px;
+    }
+
+    .page-hero-box {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2b2b2b 100%);
+      color: #fff;
+      border-radius: 28px;
+      padding: 56px 42px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(214,163,84,0.14);
+      color: #f1c98b;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .page-hero-box h1,
+    .section-heading h2,
+    .project-meta h3,
+    .content-card h3,
+    .scrub-title {
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .page-hero-box h1 {
+      font-size: clamp(2.4rem, 4vw, 4.4rem);
+      line-height: 1.02;
+      margin-bottom: 14px;
+    }
+
+    .page-hero-box p {
+      color: rgba(255,255,255,0.76);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    .section-block {
+      padding: 20px 0 80px;
+    }
+
+    .scrub-card,
+    .project-meta,
+    .content-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      height: 100%;
+    }
+
+    .section-heading {
+      margin-bottom: 24px;
+    }
+
+    .section-heading .small-title {
+      color: var(--accent-dark);
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 2.5vw, 3rem);
+      margin: 10px 0 8px;
+      color: var(--text-dark);
+    }
+
+    .section-heading p,
+    .project-meta p,
+    .content-card p,
+    .content-card li {
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .scrub-viewer {
+      background: #fff;
+    }
+
+    .scrub-image-wrap {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #ddd;
+      aspect-ratio: 16 / 9;
+      margin-bottom: 22px;
+    }
+
+    .scrub-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .scrub-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: rgba(20,20,20,0.72);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .scrub-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .scrub-title {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+    }
+
+    .scrub-desc {
+      color: var(--text-muted);
+      margin: 0;
+      max-width: 720px;
+      line-height: 1.75;
+    }
+
+    .scrub-counter {
+      background: rgba(214,163,84,0.12);
+      color: #8a6428;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .slider-controls {
+      margin-top: 10px;
+    }
+
+    .slider-controls input[type="range"] {
+      width: 100%;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent) 0%, #ead7b6 100%);
+      outline: none;
+    }
+
+    .slider-controls input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--accent);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.16);
+      cursor: pointer;
+    }
+
+    .slider-controls input[type="range"]::-moz-range-thumb {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--accent);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.16);
+      cursor: pointer;
+    }
+
+    .slider-controls input[type="range"]::-moz-range-track {
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent) 0%, #ead7b6 100%);
+    }
+
+    .scrub-scale {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .project-meta h3,
+    .content-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+
+    .meta-item {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .meta-item:last-child {
+      border-bottom: none;
+    }
+
+    .meta-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text-dark);
+    }
+
+    .timeline-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .timeline-list li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 14px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .timeline-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .btn-warning {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #111;
+      font-weight: 700;
+    }
+
+    .btn-warning:hover {
+      background-color: var(--accent-dark);
+      border-color: var(--accent-dark);
+      color: #111;
+    }
+
+    .footer {
+      padding: 24px 0 36px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 991.98px) {
+      body { padding-top: 88px; }
+      .navbar-brand { font-size: 1.9rem; }
+      .navbar-nav { gap: 6px; margin-top: 14px; }
+      .navbar-nav .nav-link { padding: 10px 14px !important; border-radius: 12px; }
+      .page-hero-box { padding: 36px 24px; }
+    }
+
+    @media (max-width: 767.98px) {
+      .page-hero-box,
+      .scrub-card,
+      .project-meta,
+      .content-card,
+      .scrub-image-wrap {
+        border-radius: 18px;
+      }
+
+      .page-hero-box h1 {
+        font-size: 2.4rem;
+      }
+
+      .scrub-title {
+        font-size: 1.45rem;
+      }
+
+      .scrub-scale {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">BuildCraft</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+        <ul class="navbar-nav align-items-lg-center ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="ongoing-projects.html">Ongoing Projects</a></li>
+          <li class="nav-item"><a class="nav-link active" href="previous-projects.html">Previous Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-box">
+          <span class="eyebrow">Progress Timeline</span>
+          <h1>Bungalow Renovation Journey</h1>
+          <p>Drag the slider to scrub through the full renovation timeline from start to finish.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="scrub-card">
+              <div class="section-heading">
+                <div class="small-title">Project Scrubber</div>
+                <h2>Drag to move through the work timeline</h2>
+                <p>This version behaves like a progress scrubber, where the range slider directly maps to many images in sequence instead of just a few fixed stages.</p>
+              </div>
+
+              <div class="scrub-viewer">
+                <div class="scrub-image-wrap">
+                  <span class="scrub-badge" id="scrubBadge">Frame 1</span>
+                  <img id="scrubImage" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop" alt="Renovation progress frame">
+                </div>
+
+                <div class="scrub-meta">
+                  <div>
+                    <div class="scrub-title" id="scrubTitle">Starting Condition</div>
+                    <p class="scrub-desc" id="scrubDesc">The original property condition before renovation work started.</p>
+                  </div>
+                  <div class="scrub-counter" id="scrubCounter">1 / 12</div>
+                </div>
+
+                <div class="slider-controls">
+                  <input type="range" id="scrubRange" min="0" max="11" step="1" value="0" aria-label="Renovation progress scrubber">
+                </div>
+
+                <div class="scrub-scale">
+                  <span>Start</span>
+                  <span>Demolition</span>
+                  <span>Civil Work</span>
+                  <span>Services</span>
+                  <span>Finishing</span>
+                  <span>Completed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="project-meta">
+              <h3>Project Details</h3>
+
+              <div class="meta-item">
+                <strong>Project Type</strong>
+                <span>Residential Bungalow Renovation</span>
+              </div>
+
+              <div class="meta-item">
+                <strong>Address</strong>
+                <span>12 Palm Residency Lane, Juhu, Mumbai, Maharashtra</span>
+              </div>
+
+              <div class="meta-item">
+                <strong>Timeline</strong>
+                <span>14 Weeks</span>
+              </div>
+
+              <div class="meta-item">
+                <strong>Status</strong>
+                <span>Completed</span>
+              </div>
+
+              <div class="meta-item">
+                <strong>Property Size</strong>
+                <span>3,200 sq. ft.</span>
+              </div>
+
+              <a href="contact.html" class="btn btn-warning mt-4 w-100">Ask About Similar Work</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block pt-0">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="content-card h-100">
+              <h3>What We Did</h3>
+              <ul class="mt-3 mb-0">
+                <li>Completed site inspection and planning before demolition started.</li>
+                <li>Removed outdated finishes, partitions, and damaged elements.</li>
+                <li>Corrected layout flow and carried out civil improvements.</li>
+                <li>Installed updated service routing for plumbing and electrical work.</li>
+                <li>Completed ceilings, flooring, carpentry, painting, and finishing.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="content-card h-100">
+              <h3>Timeline Breakdown</h3>
+              <ul class="timeline-list mt-3">
+                <li><strong>Week 1-2:</strong> Site check, planning, demolition, and debris removal.</li>
+                <li><strong>Week 3-4:</strong> Civil corrections and layout work.</li>
+                <li><strong>Week 5-6:</strong> Plumbing and electrical routing.</li>
+                <li><strong>Week 7-10:</strong> Flooring, ceiling, and wall preparation.</li>
+                <li><strong>Week 11-14:</strong> Final finishing, fittings, and project handover.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="mb-0">© 2026 BuildCraft Constructions. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const frames = [
+        {
+          title: "Starting Condition",
+          desc: "The original property condition before renovation work started.",
+          image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop"
+        },
+        {
+          title: "Site Preparation",
+          desc: "The site was measured, documented, and prepared for demolition.",
+          image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop"
+        },
+        {
+          title: "Demolition Begins",
+          desc: "Outdated finishes and unwanted built elements were removed.",
+          image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop"
+        },
+        {
+          title: "Cleared Structure",
+          desc: "The property was stripped back and made ready for correction work.",
+          image: "https://images.unsplash.com/photo-1512203492609-9728cd316b8b?q=80&w=1600&auto=format&fit=crop"
+        },
+        {
+          title: "Civil Corrections",
+          desc: "Walls, levels, and layout details were adjusted to fit the new plan.",
+          image: "https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=1600&auto=format&fit=crop"
+        },
+        {
+          title: "Service Routing",
+          desc: "Electrical and plumbing runs were installed through the updated layout.",
+          image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop"
+        },
+        {
+          title: "Ceiling & Surface Prep",
+          desc: "Ceiling work and surface preparation moved the project toward finishing.",
+          image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1600&auto=format&fit=crop"
+        },
+        {
+          title: "Flooring Progress",
+          desc: "Flooring and base surface work started shaping the final interior feel.",
+          image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1600&auto=format&fit=crop"
+        },
+        {
+          title: "Carpentry & Fitments",
+          desc: "Built-ins, storage, and key finishing components were added.",
+          image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop"
+        },
+        {
+          title: "Lighting & Finishes",
+          desc: "Final paint, lighting fixtures, and design detailing came together.",
+          image: "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop"
+        },
+        {
+          title: "Final Styling",
+          desc: "The space was cleaned, refined, and prepared for handover.",
+          image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1600&auto=format&fit=crop"
+        },
+        {
+          title: "Completed Handover",
+          desc: "The fully renovated property was delivered as a finished premium space.",
+          image: "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop"
+        }
+      ];
+
+      const scrubImage = document.getElementById("scrubImage");
+      const scrubBadge = document.getElementById("scrubBadge");
+      const scrubTitle = document.getElementById("scrubTitle");
+      const scrubDesc = document.getElementById("scrubDesc");
+      const scrubCounter = document.getElementById("scrubCounter");
+      const scrubRange = document.getElementById("scrubRange");
+
+      if (!scrubImage || !scrubBadge || !scrubTitle || !scrubDesc || !scrubCounter || !scrubRange) {
+        return;
+      }
+
+      scrubRange.max = frames.length - 1;
+
+      function renderFrame(index) {
+        const frame = frames[index];
+        if (!frame) return;
+
+        scrubImage.src = frame.image;
+        scrubImage.alt = frame.title;
+        scrubBadge.textContent = "Frame " + (index + 1);
+        scrubTitle.textContent = frame.title;
+        scrubDesc.textContent = frame.desc;
+        scrubCounter.textContent = (index + 1) + " / " + frames.length;
+      }
+
+      scrubRange.addEventListener("input", function () {
+        renderFrame(Number(scrubRange.value));
+      });
+
+      renderFrame(0);
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
