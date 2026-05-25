@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StarTech AI Constructions | Norview Residence Renovation</title>
-
+  <!-- Favicon / Tab Logo -->
+  <link rel="icon" type="image/jpeg" href="logo.jpeg" />
+  <link rel="shortcut icon" href="logo.jpeg" type="image/jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -314,13 +316,63 @@
       .scrub-title { font-size: 1.45rem; }
       .scrub-scale { flex-direction: column; align-items: flex-start; }
     }
+    .custom-navbar {
+  background: rgba(23, 23, 23, 0.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar-brand {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 0.4px;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  color: #fff;
+  display: inline-block;
+  line-height: 1.1;
+}
+
+@media (max-width: 767.98px) {
+  .navbar-brand {
+    font-size: 1.08rem;
+    gap: 10px;
+  }
+
+  .brand-logo {
+    width: 48px;
+    height: 48px;
+  }
+}
   </style>
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html">StarTech AI Constructions</a>
+      <a class="navbar-brand" href="index.html">
+  <img src="logo.jpeg" alt="StarTech AI Constructions logo" class="brand-logo">
+  <span class="brand-name">StarTech AI Constructions</span>
+</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -396,12 +448,11 @@
               </div>
               <div class="meta-item">
                 <strong>Current Phase</strong>
-                <span>Foundation and roofing work completed currently installing AC lines and constructing an additional room with an attached bathroom and patio.
-</span>
+                <span>Foundation and roofing work completed currently installing AC lines and constructing an additional room with an attached bathroom and patio.</span>
               </div>
               <div class="meta-item">
                 <strong>Area Covered</strong>
-                <span>1,850 sq. ft.</span>
+                <span>1,400 sq. ft.</span>
               </div>
 
               <a href="contact.html" class="btn btn-warning mt-4 w-100">Enquire About Similar Work</a>
@@ -431,11 +482,10 @@
             <div class="content-card h-100">
               <h3>Milestone Timeline</h3>
               <ul class="timeline-list mt-3">
-                <li><strong>Week 1-2:</strong> Roofing, AC installation, interior cleaning, and trash clearance completed.</li>
-                <!-- <li><strong>Week 3-4:</strong> Civil adjustments and surface corrections.</li>
-                <li><strong>Week 5-6:</strong> Service routing and technical coordination.</li>
-                <li><strong>Week 7-9:</strong> Ceiling work and carpentry preparation.</li>
-                <li><strong>Week 10-14:</strong> Paint, installation, and finishing.</li> -->
+                <li><strong>Week 1-2:</strong> Foundation work and complete roofing replacement completed.</li>
+                <li><strong>Week 3-4:</strong> AC line installation and structural preparation for expansion completed.</li>
+                <li><strong>Week 5-6:</strong> Construction of additional room, bathroom, and patio completed.</li>
+                <li><strong>Week 7-8:</strong> AC unit installation, finishing work, and final detailing completed.</li>
               </ul>
             </div>
           </div>
